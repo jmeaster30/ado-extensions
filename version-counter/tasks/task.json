@@ -1,0 +1,55 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "80081355-b00b-b00b-b00b-420694206969",
+    "name": "version-counter",
+    "friendlyName": "Version Counter",
+    "description": "Updates variable groups for version number increases",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "John Easterday",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "$(friendlyName)",
+    "inputs": [
+        {
+            "name": "variablegroupname",
+            "type": "string",
+            "label": "Variable Group Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The name of the variable group where your version number is stored"
+        },
+        {
+            "name": "variablename",
+            "type": "string",
+            "label": "Variable Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "The name of the variable that holds your version number"
+        },
+        {
+            "name": "maxpatch",
+            "type": "int",
+            "label": "Maximum Patch Value",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The maximum value for your patch number before the minor number increments"
+        },
+        {
+            "name": "maxminor",
+            "type": "int",
+            "label": "Maximum Minor Value",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "The maximum value for your minor number before the major number increments"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}
