@@ -1,0 +1,68 @@
+{
+  "id": "63ecbe40-b7a1-11ec-9c56-dfee992eb0b0",
+  "name": "MyVersionCounter",
+  "friendlyName": "My Version Counter :)",
+  "description": "Version number counter with variable groups",
+  "author": "John Easterday",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "27"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "MyVersionCounter $(message)",
+  "inputs": [
+    {
+      "name": "groupName",
+      "type": "string",
+      "label": "Variable Group Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The variable group name that holds the version number variable."
+    },
+    {
+      "name": "variableName",
+      "type": "string",
+      "label": "Variable Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The variable that holds the version number."
+    },
+    {
+      "name": "personalAccessToken",
+      "type": "string",
+      "label": "Personal Access Token",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "A PAT with read and write access to variable groups."
+    },
+    {
+      "name": "maxPatchNumber",
+      "type": "string",
+      "label": "Max Patch Number",
+      "defaultValue": "10",
+      "required": true,
+      "helpMarkDown": "The maximum value for the patch number."
+    },
+    {
+      "name": "maxMinorNumber",
+      "type": "string",
+      "label": "Max Minor Number",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The maximum value for the minor number."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "myversioncounter.ps1"
+    }
+  }
+}
