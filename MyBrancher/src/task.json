@@ -1,0 +1,52 @@
+{
+  "id": "e3628d21-3046-4dbf-88de-ecd8d3520636",
+  "name": "MyBrancher",
+  "friendlyName": "MyBrancher",
+  "description": "Create/update branches :)",
+  "author": "John Easterday",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "1",
+    "Minor": "3",
+    "Patch": "0"
+  },
+  "minimumAgentVersion": "1.95.0",
+  "instanceNameFormat": "MyBrancher $(message)",
+  "inputs": [
+    {
+      "name": "repositoryName",
+      "type": "string",
+      "label": "Repository Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The name of the repository that this branch will be created in."
+    },
+    {
+      "name": "sourceBranchName",
+      "type": "string",
+      "label": "Source Branch",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The name of the branch that will be branched from."
+    },
+    {
+      "name": "branchName",
+      "type": "string",
+      "label": "Branch Name",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The name of the branch will be created."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "MyBrancher.ps1"
+    }
+  }
+}

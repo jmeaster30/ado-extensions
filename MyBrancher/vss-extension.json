@@ -1,0 +1,52 @@
+{
+  "manifestVersion": 1,
+  "id": "jmeaster30-mybrancher",
+  "name": "MyBrancher",
+  "version": "1.3.0",
+  "publisher": "jmeaster30",
+  "description": "Create branches",
+  "public": false,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.code_write"
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "src/icon.png"        
+  },
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/jmeaster30/ado-extensions/tree/main/MyBrancher"
+  },
+  "files": [
+    {
+      "path": "src"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "MyBrancher",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "src"
+      }
+    }
+  ]
+}
