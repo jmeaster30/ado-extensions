@@ -1,0 +1,52 @@
+{
+  "manifestVersion": 1,
+  "id": "jmeaster30-myversioncounter",
+  "name": "MyVersionCounter",
+  "version": "1.2.0",
+  "publisher": "jmeaster30",
+  "description": "A basic version number counter that updates variables in variable groups",
+  "public": true,
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.variablegroups_manage"
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "icons": {
+    "default": "src/icon.png"        
+  },
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/jmeaster30/ado-extensions/tree/main/MyVersionCounter"
+  },
+  "files": [
+    {
+      "path": "src"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "MyVersionCounter",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "src"
+      }
+    }
+  ]
+}

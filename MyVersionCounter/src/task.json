@@ -12,9 +12,9 @@
   ],
   "demands": [],
   "version": {
-    "Major": "0",
-    "Minor": "1",
-    "Patch": "27"
+    "Major": "1",
+    "Minor": "2",
+    "Patch": "0"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "MyVersionCounter $(message)",
@@ -36,18 +36,10 @@
       "helpMarkDown": "The variable that holds the version number."
     },
     {
-      "name": "personalAccessToken",
-      "type": "string",
-      "label": "Personal Access Token",
-      "defaultValue": "",
-      "required": true,
-      "helpMarkDown": "A PAT with read and write access to variable groups."
-    },
-    {
       "name": "maxPatchNumber",
       "type": "string",
       "label": "Max Patch Number",
-      "defaultValue": "10",
+      "defaultValue": "9",
       "required": true,
       "helpMarkDown": "The maximum value for the patch number."
     },
@@ -55,7 +47,7 @@
       "name": "maxMinorNumber",
       "type": "string",
       "label": "Max Minor Number",
-      "defaultValue": "",
+      "defaultValue": "9",
       "required": true,
       "helpMarkDown": "The maximum value for the minor number."
     }

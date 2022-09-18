@@ -3,10 +3,10 @@ param()
 
 Trace-VstsEnteringInvocation $MyInvocation
 try {
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     # Get variables
     $VariableGroup = Get-VstsInput -Name groupName -Require
     $VariableName = Get-VstsInput -Name variableName -Require
-    $PersonalAccessToken = Get-VstsInput -Name personalAccessToken -Require
     $MaxPatchNum = Get-VstsInput -Name maxPatchNumber -Require
     $MaxMinorNum = Get-VstsInput -Name maxMinorNumber -Require
 
@@ -23,7 +23,6 @@ try {
     Write-Output "ProjectId: $($ProjectId)"
     Write-Output "BuildId: $($BuildId)"
 
-    $authToken = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f "", $PersonalAccessToken)))
     $requestHeader = @{Authorization = "Bearer $env:SYSTEM_ACCESSTOKEN"}
 
     # Get variables from variable group
